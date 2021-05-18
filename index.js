@@ -3,14 +3,14 @@ const axios = require('axios');
 require('dotenv').config();
 const telegramUrl = 'https://api.telegram.org/bot';
 const telegramToken = process.env.TOKEN ;
-const URL = process.env.URL;
+const LocalURL = process.env.URL;
 
 const app = express();
 app.use(express.json());
 
 const setWebHook = async ()=>{
   try {
-    res =  await axios.post(`${telegramUrl}${telegramToken}/setWebhook?url=${URL}/${telegramToken}`)
+    res =  await axios.post(`${telegramUrl}${telegramToken}/setWebhook?url=${LocalURL}/${telegramToken}`)
   } catch (err) {
     console.error(err);
   }
