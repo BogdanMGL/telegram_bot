@@ -9,16 +9,6 @@ const app = express();
 app.use(express.json());
 
 
-// const setWebHook = async ()=>{
-//   try {
-//     res =  await axios.post(`${telegramUrl}${telegramToken}/setWebhook?url=${URL}/${telegramToken}`)
-//   } catch (err) {
-//     console.error(err);
-//   }
-// }     
-// //
-// setWebHook();
-
 const sendMessage = async (chat_id, text) => {
   try {
     res = await axios.post(`${telegramUrl}${telegramToken}/sendMessage`, { chat_id, text });
